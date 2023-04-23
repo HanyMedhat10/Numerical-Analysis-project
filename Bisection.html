@@ -11,17 +11,18 @@
 </head>
 <body>
     <form>
-        <input type="text" name="equation" id="equation">
+        <input type="text" name="equation" id="equation" required>
         <label for="equation">Equation</label><br>
-        <input type="text" name="xl" id="xl">
+        <input type="text" name="xl" id="xl" required>
         <label for="xl">XL</label><br>
-        <input type="text" name="xu" id="xu">
+        <input type="text" name="xu" id="xu" required>
         <label for="xu">XU</label><br>
-        <input type="text" name="esp" id="esp">
+        <input type="text" name="esp" id="esp" required>
         <label for="eps">EPS</label><br>
         <input type="button" value="calculate" id="btn">
+        <input type="button" value="Clear" id="clear">
     </form>
-    <div>
+    <div id="middle">
         <table class="table">
             <tr>
                 <th>i</th>

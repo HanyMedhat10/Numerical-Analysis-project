@@ -1,7 +1,7 @@
 // const eps = 1.0;
 // import { evaluate, derivative } from "mathjs";
 // const math = require('mathjs');
-// $('#middle').hide();
+$('#middle').hide();
 $('#btn').click(function () { 
   var formula =$('#equation').val();
   // alert(formula);
@@ -13,6 +13,10 @@ $('#btn').click(function () {
       formula = formula.replace("^", "**");
     }
   }
+  function roundTo(num, places) {
+    const factor = 10 ** places;
+    return Math.round(num * factor) / factor;
+  };
   function convertX(expression,X){
     if(!expression) return;
     while(expression.includes("x")){
@@ -48,14 +52,14 @@ $('#btn').click(function () {
           // alert(xr);
           if (iter==0) {
             // alert(xl+" "+xu) ;
-          $('.table').append('<tr><td>'+iter+'</td><td>'+xl+'</td><td>'+f(xl)+'</td><td>'+xu+'</td><td>'+f(xu)+'</td><td>'+xr+'</td><td>'+f(xr)+'</td><td>'+'----'+'</td></tr>');
+          $('.table').append('<tr><td>'+iter+'</td><td>'+roundTo(xl,3)+'</td><td>'+roundTo(f(xl),3)+'</td><td>'+roundTo(xu,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xr,3)+'</td><td>'+roundTo(f(xr),3)+'</td><td>'+'----'+'</td></tr>');
           // document.write(iter+'\t'+xl+'\t'+f(xl)+'\t'+xu+'\t'+f(xu)+'\t'+xr+'\t'+f(xr)+'\t'+'----'+'<br>');
         }
           else {
             //  console.log(f(xl));
               error=Math.abs(((xr-xrOld)/xr)*100);   
               // alert(xl+" "+xu) ;
-              $('.table').append('<tr><td>'+iter+'</td><td>'+xl+'</td><td>'+f(xl)+'</td><td>'+xu+'</td><td>'+f(xu)+'</td><td>'+xr+'</td><td>'+f(xr)+'</td><td>'+error+'</td></tr>');
+              $('.table').append('<tr><td>'+iter+'</td><td>'+roundTo(xl,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xu,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xr,3)+'</td><td>'+roundTo(f(xr),3)+'</td><td>'+roundTo(error,3)+'</td></tr>');
               // document.write(iter+'\t'+xl+'\t'+f(xl)+'\t'+xu+'\t'+f(xu)+'\t'+xr+'\t'+f(xr)+'\t'+error+'<br>');
           }
           // fxl[i]=f(xl[iter]);
@@ -75,11 +79,23 @@ $('#btn').click(function () {
     alert('No Root in this range');
   } else {
     var root = bisect(xl,xu,esp);
-    $('.theRoot').append(root);
-    alert((root).toString);
-    // $('#middle').slideDown();
+    $('.theRoot').append(roundTo(root,3));
+    alert(root);
+    $('#middle').slideDown(3000);
   }
     
+});
+$('#clear').click(async function () { 
+  $('#middle').slideUp(3000);
+  await sleep(3000);
+  $('#equation').val('');
+  $('#xl').val('');
+  $('#xu').val('');
+  $('#esp').val('');
+  $('tr:not(:first-child)').remove();
+  $(".theRoot").empty();
+  $(".theRoot").text('The Root : ');
+
 });
 // function f(x) {
 //     return 4*Math.pow(X,2)-2.3;
