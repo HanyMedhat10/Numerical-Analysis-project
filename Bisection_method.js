@@ -2,6 +2,11 @@
 // import { evaluate, derivative } from "mathjs";
 // const math = require('mathjs');
 $('#middle').hide();
+function removeOldData() {
+  $('tr:not(:first-child)').remove();
+  $(".theRoot").empty();
+  $(".theRoot").text('The Root : ');
+}
 $('#btn').click(function () { 
   var formula =$('#equation').val();
   // alert(formula);
@@ -48,7 +53,7 @@ $('#btn').click(function () {
       // var xrOld=[0];
       do{
           xrOld=xr;
-          xr=(xl+xu)/2;
+          xr=roundTo((xl+xu)/2,3);
           // alert(xr);
           if (iter==0) {
             // alert(xl+" "+xu) ;
@@ -96,11 +101,7 @@ $('#clear').click(async function () {
   removeOldData();
 
 
-  function removeOldData() {
-    $('tr:not(:first-child)').remove();
-    $(".theRoot").empty();
-    $(".theRoot").text('The Root : ');
-  }
+
 });
 // function f(x) {
 //     return 4*Math.pow(X,2)-2.3;

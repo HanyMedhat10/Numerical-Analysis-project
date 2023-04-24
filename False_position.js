@@ -1,4 +1,9 @@
 $('#middle').hide();
+function removeOldData() {
+  $('tr:not(:first-child)').remove();
+  $(".theRoot").empty();
+  $(".theRoot").text('The Root : ');
+}
 $('#btn').click(function () { 
   var formula =$('#equation').val();
   function convert(){
@@ -68,11 +73,4 @@ $('#clear').click(async function () {
   $('#esp').val('');
   await sleep(3000);
   removeOldData();
-
-
-    function removeOldData() {
-        $('tr:not(:first-child)').remove();
-        $(".theRoot").empty();
-        $(".theRoot").text('The Root : ');
-    }
 });
