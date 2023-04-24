@@ -52,6 +52,7 @@ $('#btn').click(function () {
           // alert(xr);
           if (iter==0) {
             // alert(xl+" "+xu) ;
+            removeOldData();
           $('.table').append('<tr><td>'+iter+'</td><td>'+roundTo(xl,3)+'</td><td>'+roundTo(f(xl),3)+'</td><td>'+roundTo(xu,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xr,3)+'</td><td>'+roundTo(f(xr),3)+'</td><td>'+'----'+'</td></tr>');
           // document.write(iter+'\t'+xl+'\t'+f(xl)+'\t'+xu+'\t'+f(xu)+'\t'+xr+'\t'+f(xr)+'\t'+'----'+'<br>');
         }
@@ -92,10 +93,14 @@ $('#clear').click(async function () {
   $('#xu').val('');
   $('#esp').val('');
   await sleep(3000);
-  $('tr:not(:first-child)').remove();
-  $(".theRoot").empty();
-  $(".theRoot").text('The Root : ');
+  removeOldData();
 
+
+  function removeOldData() {
+    $('tr:not(:first-child)').remove();
+    $(".theRoot").empty();
+    $(".theRoot").text('The Root : ');
+  }
 });
 // function f(x) {
 //     return 4*Math.pow(X,2)-2.3;

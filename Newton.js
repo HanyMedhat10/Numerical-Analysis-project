@@ -24,25 +24,24 @@ $('#btn').click(function () {
   var compile=convertX(expression,x);
   return eval(compile);
   }
-  var xl =parseFloat($('#xl').val());
-  var xu =parseFloat($('#xu').val());
+  var xi =parseFloat($('#xi').val());
   var esp =parseFloat($('#esp').val());
   alert(esp);
-  function falsePosition(xl,xu,eps=0.1) {
+  function newton(xi,eps=0.1) {
       var iter=0 ,xr=0,error=0,xrOld=0;
       do{
           xrOld=xr;
-          xr = roundTo( xu - (f(xu) * (xl - xu)) / (f(xl) - f(xu)),3 );
+          xr = ( xu - (f(xu) * (xi - xu)) / (f(xi) - f(xu)) );
           if (iter==0) {
             removeOldData();
-          $('.table').append('<tr><td>'+iter+'</td><td>'+roundTo(xl,3)+'</td><td>'+roundTo(f(xl),3)+'</td><td>'+roundTo(xu,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xr,3)+'</td><td>'+roundTo(f(xr),3)+'</td><td>'+'----'+'</td></tr>');
+          $('.table').append('<tr><td>'+iter+'</td><td>'+roundTo(xi,3)+'</td><td>'+roundTo(f(xi),3)+'</td><td>'+roundTo(xu,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xr,3)+'</td><td>'+roundTo(f(xr),3)+'</td><td>'+'----'+'</td></tr>');
         }
           else {
               error=Math.abs(((xr-xrOld)/xr)*100);   
-              $('.table').append('<tr><td>'+iter+'</td><td>'+roundTo(xl,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xu,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xr,3)+'</td><td>'+roundTo(f(xr),3)+'</td><td>'+roundTo(error,3)+'</td></tr>');
+              $('.table').append('<tr><td>'+iter+'</td><td>'+roundTo(xi,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xu,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xr,3)+'</td><td>'+roundTo(f(xr),3)+'</td><td>'+roundTo(error,3)+'</td></tr>');
           }
-          if (f(xl)*f(xr)>0) {
-              xl=xr;
+          if (f(xi)*f(xr)>0) {
+              xi=xr;
           } else {
               xu=xr;
           }
@@ -50,10 +49,10 @@ $('#btn').click(function () {
       }while(error > eps||iter==1);
     return xr;
   }
-  if (f(xl)*f(xu)>0) {
+  if (f(xi)*f(xu)>0) {
     alert('No Root in this range');
   } else {
-    var root = falsePosition(xl,xu,esp);
+    var root = newton(xi,esp);
     $('.theRoot').append(roundTo(root,3));
     alert(root);
     $('#middle').slideDown(3000);
@@ -63,8 +62,7 @@ $('#btn').click(function () {
 $('#clear').click(async function () { 
   $('#middle').slideUp(3000);
   $('#equation').val('');
-  $('#xl').val('');
-  $('#xu').val('');
+  $('#xi').val('');
   $('#esp').val('');
   await sleep(3000);
   removeOldData();
