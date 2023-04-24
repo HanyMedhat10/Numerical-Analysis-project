@@ -87,11 +87,11 @@ $('#btn').click(function () {
 });
 $('#clear').click(async function () { 
   $('#middle').slideUp(3000);
-  await sleep(3000);
   $('#equation').val('');
   $('#xl').val('');
   $('#xu').val('');
   $('#esp').val('');
+  await sleep(3000);
   $('tr:not(:first-child)').remove();
   $(".theRoot").empty();
   $(".theRoot").text('The Root : ');
