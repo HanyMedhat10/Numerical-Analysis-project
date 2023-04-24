@@ -1,6 +1,20 @@
+// import * as math from 'mathjs';
 $('#middle').hide();
+function removeOldData() {
+  $('tr:not(:first-child)').remove();
+  $(".theRoot").empty();
+  $(".theRoot").text('The Root : ');
+}
 $('#btn').click(function () { 
   var formula =$('#equation').val();
+  // alert(formula);
+  function convertVal(val){
+    if(!val) return;
+    while(val.includes("^")){
+      val = val.replace("^", "**");
+    }
+    return val;
+  }
   function convert(){
     if(!formula) return;
     while(formula.includes("^")){
@@ -20,43 +34,51 @@ $('#btn').click(function () {
   }
   function f (x){
     convert();
-  var expression= formula;
-  var compile=convertX(expression,x);
-  return eval(compile);
+    // alert(formula);
+    var expression=formula;
+    // alert(expression);
+    var compile=convertX(expression,x);
+    return eval(compile);
   }
+  var derv;
+  function fDash(x){
+    let xDash = formula;
+    while(xDash.includes('**')) xDash = xDash.replace('**', '^');
+    alert(xDash);
+    derv =math.derivative(xDash, 'x');
+    alert(derv);
+    var expression=convertVal(derv);
+    alert(expression);
+  expression=convertX(expression,x)
+  return roundTo(eval(expression), 3);
+} 
   var xi =parseFloat($('#xi').val());
   var esp =parseFloat($('#esp').val());
   alert(esp);
   function newton(xi,eps=0.1) {
-      var iter=0 ,xr=0,error=0,xrOld=0;
+      var iter=0 ,error=0,xiOld=0;
       do{
-          xrOld=xr;
-          xr = ( xu - (f(xu) * (xi - xu)) / (f(xi) - f(xu)) );
+          xiOld=xi;
           if (iter==0) {
-            removeOldData();
-          $('.table').append('<tr><td>'+iter+'</td><td>'+roundTo(xi,3)+'</td><td>'+roundTo(f(xi),3)+'</td><td>'+roundTo(xu,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xr,3)+'</td><td>'+roundTo(f(xr),3)+'</td><td>'+'----'+'</td></tr>');
-        }
-          else {
-              error=Math.abs(((xr-xrOld)/xr)*100);   
-              $('.table').append('<tr><td>'+iter+'</td><td>'+roundTo(xi,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xu,3)+'</td><td>'+roundTo(f(xu),3)+'</td><td>'+roundTo(xr,3)+'</td><td>'+roundTo(f(xr),3)+'</td><td>'+roundTo(error,3)+'</td></tr>');
+            // removeOldData();
+            // alert(xi);
+            alert(f(xi));
+            alert(fDash(xi));
+            $('.table').append('<tr><td>'+iter+'</td><td>'+roundTo(xi,3)+'</td><td>'+roundTo(f(xi),3)+'</td><td>'+roundTo(fDash(xi),3)+'</td><td>'+'----'+'</td></tr>');
           }
-          if (f(xi)*f(xr)>0) {
-              xi=xr;
-          } else {
-              xu=xr;
+          else {
+               xi = roundTo( xi - (f(xi)/fDash(xi)) ,3);
+              error=Math.abs(((xr-xrOld)/xr)*100);   
+              $('.table').append('<tr><td>'+iter+'</td><td>'+roundTo(xi,3)+'</td><td>'+roundTo(f(xi),3)+'</td><td>'+roundTo(fDash(xi),3)+'</td><td>'+roundTo(error,3)+'</td></tr>');
           }
           iter++;
       }while(error > eps||iter==1);
     return xr;
   }
-  if (f(xi)*f(xu)>0) {
-    alert('No Root in this range');
-  } else {
     var root = newton(xi,esp);
     $('.theRoot').append(roundTo(root,3));
     alert(root);
     $('#middle').slideDown(3000);
-  }
     
 });
 $('#clear').click(async function () { 
@@ -68,9 +90,4 @@ $('#clear').click(async function () {
   removeOldData();
 
 
-    function removeOldData() {
-        $('tr:not(:first-child)').remove();
-        $(".theRoot").empty();
-        $(".theRoot").text('The Root : ');
-    }
 });
