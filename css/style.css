@@ -1,0 +1,111 @@
+.home{
+     
+    background-image: url(../img/Frame\ 21s3.png);
+    background-position: center; 
+    background-size: cover;
+  position: relative;
+  
+}
+
+.navbar{
+    z-index: 99999;
+}
+.navimg{
+    width: 140px;
+}
+
+.layer{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.823);
+}
+.contant{
+    position: absolute;
+   top: 0px;
+}
+
+.center{
+    
+    position: absolute;
+    
+}
+.fouter{
+    height: 150px;
+    position: fixed;
+    bottom: 0px;
+    background-color: rgb(33, 32, 32);
+
+}
+
+.title{
+    font-size: 40px;
+
+}
+
+.NAimg{
+    width: 100px;
+    height: 130px;
+    position: absolute;
+  right: 130;
+   top: 20px;
+}
+
+
+.icon{
+    position: absolute;
+    bottom: 0px;
+}
+
+.arrowicon{
+  font-size: 25px;
+  animation: infinite  icon 3s;
+    
+}
+
+
+@keyframes icon {
+
+
+    0% {
+        
+        top: 80%;
+        transform: translate(180deg, 0deg)
+    }
+
+
+    100% {
+        
+        top: 85%;
+        transform: translate(180deg, 0deg);
+    }
+
+
+}
+
+.card-img-top {
+    border-radius: 8px;
+}
+
+.icons{
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    position: relative;
+}
+
+
+.layerMethod{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(44, 43, 43, 0.934);
+}
+
+
+.img259{
+    position: absolute;
+    right: 0;
+}
