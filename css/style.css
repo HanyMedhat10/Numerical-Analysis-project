@@ -71,7 +71,7 @@ font-size: 1.25rem;
 
 .arrowicon{
   font-size: 25px;
-  animation: infinite  icon .5s ;
+  animation: infinite  icon 1s ;
     
 }
 
@@ -94,11 +94,43 @@ font-size: 1.25rem;
 
 
 }
-
 .card-img-top {
     border-radius: 8px;
 }
+.the-root{
+    text-align: center;
+}
+[type="text"]{
+    color: white;
+    background-color:black ;
+    border-radius: 25px;
+    border: 2px solid #FFFFFF;
+    padding: 8px;
+}
+[type="button"]{
+    background: #0085FF;
+border-radius: 45px;
+padding: 6px;
+width: 130px;
+}
 
+#equation{
+    
+    width: 420px;
+}
+.equation{
+    margin-left: 180px;
+}
+.label{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+/* .input{
+    display: flex;
+    flex-direction: row;
+    justify-content: first baseline;
+} */
 .icons{
     width: 30px;
     height: 30px;
@@ -108,7 +140,8 @@ font-size: 1.25rem;
     left: 130px;
     text-align: center;
     color: white;
-    background-color:  #0058ff;;
+    background-color:  #0058ff;
+    border: 2px solid black;
     /* position: relative; */
 }
 
@@ -130,6 +163,18 @@ table{
     width: 100%;
     height: 100%;
     border-radius: 50%;
+}
+#label-xl{
+    padding-left: 100px;
+    padding-top: 8px;
+}
+#label-xu{
+    padding-left: 190px;
+    padding-top: 8px;
+}
+#label-eps{
+    padding-left: 180px;
+    padding-top: 8px;
 }
 /* .solution-table {
     border-collapse: collapse;
@@ -154,9 +199,9 @@ table{
 .table td, .table th{
     border: 3px solid rgba(90, 90, 90, 0.5);
 }
-.img259{
-    position: absolute;
-    right: 0;
+.last-img{
+    display: flex;
+    flex-direction: row-reverse;
 }
 /* #Alg{
     /* position: absolute; */

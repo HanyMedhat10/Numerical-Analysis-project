@@ -27,12 +27,31 @@
                 <p>ALGORITHM</p>
                <img class="rounded float-start" src="img\carbon (56) 1.png"> 
             </div>
-            <div class="col-md-5 m-5  justify-content-center">
+            <div class="col-md-7 m-4  justify-content-center">
                 <h1>Bisection Method</h1>
                 <p>The bisection method is an approximation method to find the roots of the given equation by repeatedly
                     dividing the interval. This method will divide the interval until the resulting interval is found,
                     which is
                     extremely small.</p>
+                    <form>
+                        <div for="equation" class="equation">Equation</div>
+                        <input type="text" name="equation" id="equation" required>
+                        <input type="button" value="calculate" id="btn">
+                        <input type="button" value="Clear" id="clear">
+                        <br>
+                        <!-- <div class="label"> -->
+                        <label for="xl" id="label-xl">XL</label>
+                        <label for="xu" id="label-xu">XU</label>
+                        <label for="eps" id="label-eps">EPS</label>
+                    <!-- </div> -->
+                        <!-- <div class="input"> -->
+                            <br>
+                        <input class="m-2" type="text" name="xl" id="xl" required>
+                        <input type="text" name="xu" id="xu" required>
+                        <input type="text" name="esp" id="esp" required>
+                    <!-- </div> -->
+                        
+                    </form>
             </div>
         </div>
 
@@ -94,8 +113,9 @@
               
           </table>
           </div>
+          <h3 class="text-white m-4 the-root">The Root = </h3>
         </div>
-          bs5
+          <!-- bs5 -->
     <div class="footer  w-100   text-white">
         <div class="row">
 
