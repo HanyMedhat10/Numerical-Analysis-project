@@ -5,32 +5,158 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Newton</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </head>
-<body>
-    <form>
-        <input type="text" name="equation" id="equation" required>
-        <label for="equation">Equation</label><br>
-        <input type="text" name="xi" id="xi" required>
-        <label for="xi">XI</label><br>
-        <input type="text" name="esp" id="esp" required>
-        <label for="eps">EPS</label><br>
-        <input type="button" value="calculate" id="btn">
-        <input type="button" value="Clear" id="clear">
-    </form>
-    <div id="middle">
-        <table class="table">
-            <tr>
-                <th>i</th>
-                <th>xi</th>
-                <th>f(xi)</th>
-                <th>fDash(xi)</th>
-                <th>error</th>
-                </tr>
-        </table>
-        <div class="theRoot">The Root : </div>
+<body class="bg-black">
+    <nav class="navbar navbar-expand-lg bg-white   ">
+        <div class="container">
+            <div class="w-25">
+                <img src="img/Group 5.png" class="navimg ms-5 ">
+            </div>
+            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                <div class="navbar-nav  ms-auto ">
+                    <a class="nav-link  text-dark  p-2" href="team.html">About Team</a>
+                    <a class="nav-link text-black p-2" href="#">About Project</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="text-white mt-4 ">
+        <div class="row">
+            <div class="col-sm-3">
+                <p>ALGORITHM</p>
+               <img class="rounded float-start" src="img\carbon (56) 1.png"> 
+            </div>
+            <div class="col-md-7 m-4  justify-content-center">
+                <h1>Newton Method
+                </h1>
+                <p>Newton's method is a technique for solving equations of the form f(x)=0 by successive approximation. <br>
+                    The idea is to pick an initial guess x0 such that f(x0) is reasonably close to 0. <br>
+                     We then find the equation of the line tangent to y=f(x) at x=x0 and follow it back to the x axis at a new (and improved!) guess x1.</p>
+                    <form>
+                        <div for="equation" class="equation">Equation</div>
+                        <input type="text" name="equation" id="equation" required>
+                        <input type="button" value="calculate" id="btn">
+                        <input type="button" value="Clear" id="clear">
+                        <br>
+                        <!-- <div class="label"> -->
+                        <label for="xl" id="label-xl">Xi</label>
+                        <label for="xu" id="label-xu">EPS</label>
+                        <!-- <label for="eps" id="label-eps">EPS</label> -->
+                    <!-- </div> -->
+                        <!-- <div class="input"> -->
+                            <br>
+                        <input class="m-2" type="text" name="xi" id="xi" required>
+                        <!-- <input type="text" name="xu" id="xu" required> -->
+                        <input type="text" name="esp" id="esp" required>
+                    <!-- </div> -->
+                        
+                    </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+<div id="middle">    <div class=" w-75 h-50 bg-dark  m-auto mt-md-5" >
+            <table class="table  text-white">
+              <tr>
+                <th >i</th>
+                <th >xi</th>
+                <th >f(xi)</th>
+                <th >fDash(xu)</th>
+                <th >error</th>
+              </tr>
+              <tr>
+                <td >1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+              </tr>
+              <tr>
+                <td >2</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              
+          </table>
+          </div>
+          <h3 class="text-white m-4 the-root">The Root = </h3>
+        </div>
+          <!-- bs5 -->
+    <div class="footer  w-100   text-white">
+        <div class="row">
+
+            <div class="col-4  position-relative">
+                <img src="img/NA.png" class="NAimg ">
+            </div>
+
+
+            <div class="col-8 ">
+                <div class="row">
+                    <div class="col-3 p-3 ms-5">
+                        <p>
+                       <a href="#">Bisection</a><br>
+                       <a href="#">False Position</a><br>
+                       <a href="#">Simple Fixed Point</a><br>
+                       <a href="#">Newton</a><br>
+                       <a href="#">Secant</a>
+                        </p>
+                    </div>
+                    <div class="col-3 p-3">
+                        <a href="#">Gauss Elimination</a><br>
+                        <a href="#">LU Decomposition</a><br>
+                        <a href="#">Cramer’s Rules</a><br>
+                        <a href="#">Partial Pivoting</a><br>
+                        <a href="#">Gauss Jordan</a><br>
+                    </div>
+                    <div class="col-3 p-3">
+                         <p>
+                            <a href="#">Golden Section Search</a> <br>
+                            <a href="#"> Gradient Method </a><br>
+                            <a href="#"> Gradients & Hessians </a>
+                        </p> 
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
     
     <script src='https://code.jquery.com/jquery-3.6.4.min.js'></script>

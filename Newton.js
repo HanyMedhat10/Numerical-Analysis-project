@@ -1,8 +1,8 @@
 $('#middle').hide();
 function removeOldData() {
   $('tr:not(:first-child)').remove();
-  $(".theRoot").empty();
-  $(".theRoot").text('The Root : ');
+  $(".the-root").empty();
+  $(".the-root").text('The Root = ');
 }
 $('#btn').click(function () { 
   var formula =$('#equation').val();
@@ -86,7 +86,7 @@ $('#btn').click(function () {
     return xi;
   }
     var root = newton(xi,esp);
-    $('.theRoot').append(roundTo(root,3));
+    $('.the-root').append(roundTo(root,3));
     $('#middle').slideDown(3000);
     
 });
