@@ -87,15 +87,17 @@ $('#btn').click(function () {
   }
     var root = newton(xi,esp);
     $('.the-root').append(roundTo(root,3));
-    $('#middle').slideDown(3000);
+    // $('#middle').slideDown(3000);
+    $('#middle').show();
     
 });
-$('#clear').click(async function () { 
-  $('#middle').slideUp(3000);
+$('#clear').click( function () { 
+  // $('#middle').slideUp(3000);
+  $('#middle').hide();
   $('#equation').val('');
   $('#xi').val('');
   $('#esp').val('');
-  await sleep(3000);
+  // await sleep(3000);
   removeOldData();
 
 

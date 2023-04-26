@@ -87,17 +87,19 @@ $('#btn').click(function () {
     var root = bisect(xl,xu,esp);
     $('.the-root').append(roundTo(root,3));
     alert(root);
-    $('#middle').slideDown(3000);
+    // $('#middle').slideDown(3000);
+    $('#middle').show();
   }
     
 });
-$('#clear').click(async function () { 
-  $('#middle').slideUp(3000);
+$('#clear').click( function () { 
+  // $('#middle').slideUp(3000);
+  $('#middle').hide();
   $('#equation').val('');
   $('#xl').val('');
   $('#xu').val('');
   $('#esp').val('');
-  await sleep(3000);
+  // await sleep(3000);
   removeOldData();
 
 
