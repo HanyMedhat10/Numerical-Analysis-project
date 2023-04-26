@@ -34,6 +34,12 @@ div a{
 text-decoration: none;
 color: white;
 }
+.link-card{
+text-decoration: none;
+color: #212529;
+font-weight: 500;
+font-size: 1.25rem;
+}
 .fouter{
     height: 150px;
     position: fixed;
@@ -65,7 +71,7 @@ color: white;
 
 .arrowicon{
   font-size: 25px;
-  animation: infinite  icon 3s;
+  animation: infinite  icon .5s ;
     
 }
 
@@ -73,17 +79,17 @@ color: white;
 @keyframes icon {
 
 
-    0% {
+    /* 0% {
         
         top: 80%;
         transform: translate(180deg, 0deg)
-    }
+    } */
 
 
-    100% {
+   to {
         
         top: 85%;
-        transform: translate(180deg, 0deg);
+        transform: translateY(-20px);
     }
 
 
@@ -96,8 +102,14 @@ color: white;
 .icons{
     width: 30px;
     height: 30px;
-    background-color: blue;
-    position: relative;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 95px;
+    left: 130px;
+    text-align: center;
+    color: white;
+    background-color:  #0058ff;;
+    /* position: relative; */
 }
 
 
