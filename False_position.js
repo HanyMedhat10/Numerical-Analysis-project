@@ -61,7 +61,7 @@ $('#btn').click(function () {
     var root = falsePosition(xl,xu,esp);
     $('.the-root').append(roundTo(root,3));
     alert(root);
-    $('#middle').slideDown(3000);
+    $('#middle').show();
   }
     
 });
