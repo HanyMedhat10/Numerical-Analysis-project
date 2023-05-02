@@ -32,7 +32,7 @@ $("#btn").click(function () {
   var xl = parseFloat($("#xl").val());
   var xu = parseFloat($("#xu").val());
   var esp = parseFloat($("#esp").val());
-  alert(esp);
+  console.log(esp);
   function falsePosition(xl, xu, eps = 0.1) {
     var iter = 0,
       xr = 0,
@@ -98,7 +98,7 @@ $("#btn").click(function () {
   } else {
     var root = falsePosition(xl, xu, esp);
     $(".the-root").append(roundTo(root, 3));
-    alert(root);
+    console.log(root);
     $("#middle").show();
   }
 });
