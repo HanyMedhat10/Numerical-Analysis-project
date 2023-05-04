@@ -171,3 +171,11 @@ table{
     display: flex;
     flex-direction: row-reverse;
 }
+.SContain {
+    background-color: #0058ff;
+    border-radius: 35px;
+    width: 50%;
+    margin-left: 25%;
+    text-align: left;
+    padding-left: 30px;
+}
