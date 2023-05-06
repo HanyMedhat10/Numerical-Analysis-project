@@ -27,7 +27,7 @@
 }
 .contant{
     position: absolute;
-   top: 0px;
+    top: 0px;
 }
 .title{
     color: #0058ff;
@@ -84,8 +84,8 @@ animation: infinite  icon 1s ;
     width: 100px;
     height: 130px;
     position: absolute;
-  right: 130;
-   top: 20px;
+    right: 130;
+    top: 20px;
 }
 
 @keyframes icon {
@@ -116,7 +116,6 @@ width: 130px;
 }
 
 #equation{
-    
     width: 420px;
 }
 .equation{

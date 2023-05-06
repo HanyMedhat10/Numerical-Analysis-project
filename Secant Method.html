@@ -3,8 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Newton</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Secant Method</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 <!-- add icon link -->
 <link rel = "icon" href = "img/NA.png"  type = "image/x-icon">
@@ -36,11 +35,10 @@
                <img class="rounded float-start" src="img\carbon (56) 1.png"> 
             </div>
             <div class="col-md-7 m-4  justify-content-center">
-                <h1>Newton Method
+                <h1>Secant Method
                 </h1>
-                <p>Newton's method is a technique for solving equations of the form f(x)=0 by successive approximation. <br>
-                    The idea is to pick an initial guess x0 such that f(x0) is reasonably close to 0. <br>
-                     We then find the equation of the line tangent to y=f(x) at x=x0 and follow it back to the x axis at a new (and improved!) guess x1.</p>
+                <p>The false position method is one of the iterative methods of finding the roots of a non-linear equation of the form <br>
+                    f(x) = 0. This method provides us with a better approximation of the roots of the equation.</p>
                     <form>
                         <div for="equation" class="equation">Equation</div>
                         <input type="text" name="equation" id="equation" required>
@@ -48,14 +46,14 @@
                         <input type="button" value="Clear" id="clear">
                         <br>
                         <!-- <div class="label"> -->
-                        <label for="xl" id="label-xl">Xi</label>
-                        <label for="xu" id="label-xu">EPS</label>
-                        <!-- <label for="eps" id="label-eps">EPS</label> -->
+                        <label for="xl" id="label-xl">X<sub>i-1</sub></label>
+                        <label for="xu" id="label-xu">X<sub>i</sub></label>
+                        <label for="eps" id="label-eps">EPS</label>
                     <!-- </div> -->
                         <!-- <div class="input"> -->
                             <br>
-                        <input class="m-2" type="text" name="xi" id="xi" required>
-                        <!-- <input type="text" name="xu" id="xu" required> -->
+                        <input class="m-2" type="text" name="xl" id="xl" required>
+                        <input type="text" name="xu" id="xu" required>
                         <input type="text" name="esp" id="esp" required>
                     <!-- </div> -->
                         
@@ -68,86 +66,57 @@
 
 
 <div id="middle">    <div class=" w-75 h-50 bg-dark  m-auto mt-md-5" >
-            <table class="table  text-white">
-              <tr>
-                <th >i</th>
-                <th >xi</th>
-                <th >f(xi)</th>
-                <th >fDash(xu)</th>
-                <th >error</th>
-              </tr>
-              <tr>
-                <td >1</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+    <table class="table  text-white">
+        <tr>
+        <th >i</th>
+        <th >X<sub>i-1</sub></th>
+        <th >f(X<sub>i-1</sub>)</th>
+        <th >X<sub>i</sub></th>
+        <th >f(x<sub>i</sub>)</th>
+        <th >error</th>
+        </tr>
+        <tr>
+        <td >1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
 
-              </tr>
-              <tr>
-                <td >2</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              
-          </table>
-          </div>
-          <h3 class="text-white m-4 the-root">The Root = </h3>
+        </tr>
+        <tr>
+        <td >2</td>
+        <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+        <td>3</td>
+        <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+        <td>4</td>
+        <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+        <td>5</td>
+        <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+        <td>6</td>
+        <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+        <td>7</td>
+        <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+        <td>8</td>
+        <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+</div>
+<h3 class="text-white m-4 the-root">The Root = </h3>
         </div>
-          <!-- bs5 -->
-          <div class="footer  w-100   text-white">
+        <div class="footer  w-100   text-white">
             <div class="row">
         
                 <div class="col-4  position-relative">
@@ -187,13 +156,7 @@
             </div>
         </div>
         
-    
     <script src='/js/jquery-3.6.4.min.js'></script>
-    <!-- <script src="https://nerdamer.com/js/nerdamer.core.js"></script>
-    <script src="https://nerdamer.com/js/Algebra.js"></script>
-    <script src="https://nerdamer.com/js/Calculus.js"></script> -->
-    <!-- <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script> -->
-    <script src='Newton.js'></script>
-    <script src='math.js'></script>
+    <script src='Secant Method.js'></script>
 </body>
 </html>

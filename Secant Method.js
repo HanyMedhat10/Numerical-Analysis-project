@@ -29,85 +29,71 @@ $("#btn").click(function () {
     var compile = convertX(expression, x);
     return eval(compile);
   }
-  var xl = parseFloat($("#xl").val());
-  var xu = parseFloat($("#xu").val());
+  var xiMinus1 = parseFloat($("#xl").val());
+  var xi = parseFloat($("#xu").val());
+  console.log(xi);
   var esp = parseFloat($("#esp").val());
   console.log(esp);
-  function falsePosition(xl, xu, eps = 0.1) {
+  function secant(xiMinus1, xi,eps=0.1) {
     var iter = 0,
-      xr = 0,
       error = 0,
-      xrOld = 0;
+      xiOld = 0;
     do {
-      xrOld = xr;
-      xr = roundTo(xu - (f(xu) * (xl - xu)) / (f(xl) - f(xu)), 3);
+      xiOld = xi;
       if (iter == 0) {
         removeOldData();
         $(".table").append(
           "<tr><td>" +
             iter +
             "</td><td>" +
-            roundTo(xl, 3) +
+            roundTo(xiMinus1, 3) +
             "</td><td>" +
-            roundTo(f(xl), 3) +
+            roundTo(f(xiMinus1), 3) +
             "</td><td>" +
-            roundTo(xu, 3) +
+            roundTo(xi, 3) +
             "</td><td>" +
-            roundTo(f(xu), 3) +
-            "</td><td>" +
-            roundTo(xr, 3) +
-            "</td><td>" +
-            roundTo(f(xr), 3) +
+            roundTo(f(xi), 3) +
             "</td><td>" +
             "----" +
             "</td></tr>"
         );
       } else {
-        error = Math.abs(((xr - xrOld) / xr) * 100);
+        error = Math.abs(((xi - xiOld) / xi) * 100);
         $(".table").append(
           "<tr><td>" +
             iter +
             "</td><td>" +
-            roundTo(xl, 3) +
+            roundTo(xiMinus1, 3) +
             "</td><td>" +
-            roundTo(f(xl), 3) +
+            roundTo(f(xiMinus1), 3) +
             "</td><td>" +
-            roundTo(xu, 3) +
+            roundTo(xi, 3) +
             "</td><td>" +
-            roundTo(f(xu), 3) +
-            "</td><td>" +
-            roundTo(xr, 3) +
-            "</td><td>" +
-            roundTo(f(xr), 3) +
+            roundTo(f(xi), 3) +
             "</td><td>" +
             roundTo(error, 3) +
             "</td></tr>"
         );
       }
-      if (f(xl) * f(xr) > 0) {
-        xl = xr;
-      } else {
-        xu = xr;
-      }
+      xi = roundTo(xi - (f(xi) * (xiMinus1 - xi)) / (f(xiMinus1) - f(xi)), 3);
+      xiMinus1=xiOld;
       iter++;
     } while (error > eps || iter == 1);
-    return xr;
+    return xiMinus1;
   }
-  if (f(xl) * f(xu) > 0) {
-    alert("No Root in this range");
-  } else {
-    var root = falsePosition(xl, xu, esp);
+ 
+    var root = secant(xiMinus1, xi, esp);
     $(".the-root").append(roundTo(root, 3));
     console.log(root);
     $("#middle").show();
-  }
+  
 });
 $("#clear").click(function () {
   // $('#middle').slideUp(3000);
   $("#middle").hide();
   $("#equation").val("");
   $("#xl").val("");
-  $("#xu").val("");
+  $("#xi").val("");
   $("#esp").val("");
   // await sleep(3000);
   removeOldData();
