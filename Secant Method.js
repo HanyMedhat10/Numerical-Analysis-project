@@ -34,12 +34,13 @@ $("#btn").click(function () {
   console.log(xi);
   var esp = parseFloat($("#esp").val());
   console.log(esp);
-  function secant(xiMinus1, xi,eps=0.1) {
+  function secant(xiMinus1, xi,esp=0.1) {
     var iter = 0,
       error = 0,
       xiOld = 0;
     do {
       xiOld = xi;
+      xi = roundTo(xi - (f(xi) * (xiMinus1 - xi)) / (f(xiMinus1) - f(xi)), 3);
       if (iter == 0) {
         removeOldData();
         $(".table").append(
@@ -50,15 +51,31 @@ $("#btn").click(function () {
             "</td><td>" +
             roundTo(f(xiMinus1), 3) +
             "</td><td>" +
-            roundTo(xi, 3) +
+            roundTo(xiOld, 3) +
             "</td><td>" +
-            roundTo(f(xi), 3) +
+            roundTo(f(xiOld), 3) +
             "</td><td>" +
             "----" +
             "</td></tr>"
         );
+        // $(".table").append(
+        //   "<tr><td>" +
+        //     iter +
+        //     "</td><td>" +
+        //     roundTo(xiMinus1, 3) +
+        //     "</td><td>" +
+        //     roundTo(f(xiMinus1), 3) +
+        //     "</td><td>" +
+        //     roundTo(xi, 3) +
+        //     "</td><td>" +
+        //     roundTo(f(xi), 3) +
+        //     "</td><td>" +
+        //     "----" +
+        //     "</td></tr>"
+        // );
       } else {
-        error = Math.abs(((xi - xiOld) / xi) * 100);
+        error = Math.abs(((xiOld-xiMinus1) / xi) * 100);
+        // error = Math.abs(((xi - xiOld) / xi) * 100);
         $(".table").append(
           "<tr><td>" +
             iter +
@@ -67,18 +84,32 @@ $("#btn").click(function () {
             "</td><td>" +
             roundTo(f(xiMinus1), 3) +
             "</td><td>" +
-            roundTo(xi, 3) +
+            roundTo(xiOld, 3) +
             "</td><td>" +
-            roundTo(f(xi), 3) +
+            roundTo(f(xiOld), 3) +
             "</td><td>" +
             roundTo(error, 3) +
             "</td></tr>"
         );
+        // $(".table").append(
+        //   "<tr><td>" +
+        //     iter +
+        //     "</td><td>" +
+        //     roundTo(xiMinus1, 3) +
+        //     "</td><td>" +
+        //     roundTo(f(xiMinus1), 3) +
+        //     "</td><td>" +
+        //     roundTo(xi, 3) +
+        //     "</td><td>" +
+        //     roundTo(f(xi), 3) +
+        //     "</td><td>" +
+        //     roundTo(error, 3) +
+        //     "</td></tr>"
+        // );
       }
-      xi = roundTo(xi - (f(xi) * (xiMinus1 - xi)) / (f(xiMinus1) - f(xi)), 3);
       xiMinus1=xiOld;
       iter++;
-    } while (error > eps || iter == 1);
+    } while (error > esp || iter == 1);
     return xiMinus1;
   }
  
