@@ -18,7 +18,12 @@
 .navimg{
     width: 140px;
 }
-
+.card-body:hover {
+    background-color: rgb(227, 236, 233);
+    transform: scale(1.2);
+    transition: transform 2s;
+    
+}
 .layer{
     position: absolute;
     top:0px;
