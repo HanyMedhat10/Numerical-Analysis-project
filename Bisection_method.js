@@ -118,12 +118,21 @@ $("#btn").click(function () {
     } while (error > eps || iter == 1);
     return xr;
   }
+  var myVideo = document.getElementById("video1"); 
+function playPause() { 
+  if (myVideo.paused) 
+    myVideo.play(); 
+  else 
+    myVideo.pause(); 
+}
   // alert(f(xl)*f(xu));
   if (f(xl) * f(xu) > 0) {
     alert("No Root in this range");
   } else {
     var root = bisect(xl, xu, esp);
     $(".the-root").append(roundTo(root, 3));
+    playPause();
+    
     console.log(root);
     // $('#middle').slideDown(3000);
     $("#middle").show();

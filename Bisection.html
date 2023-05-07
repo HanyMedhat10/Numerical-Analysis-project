@@ -12,62 +12,61 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="/js/bootstrap.bundle.min.js" ></script>
-</head>
-<body class="bg-black">
+  </head>
+  <body class="bg-black">
     <nav class="navbar navbar-expand-lg bg-white   ">
         <div class="container">
-            <div class="w-25">
-                <a href="index.html"><img src="img/Group 5.png" class="navimg ms-5 "></a>
+          <div class="w-25">
+            <a href="index.html"><img src="img/Group 5.png" class="navimg ms-5 "></a>
+          </div>
+          <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <div class="navbar-nav  ms-auto ">
+              <a class="nav-link  text-dark  p-2" href="team.html">About Team</a>
+              <a class="nav-link text-black p-2" href="about_project.html">About Project</a>
             </div>
-            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                <div class="navbar-nav  ms-auto ">
-                    <a class="nav-link  text-dark  p-2" href="team.html">About Team</a>
-                    <a class="nav-link text-black p-2" href="about_project.html">About Project</a>
-                </div>
-            </div>
+          </div>
         </div>
-    </nav>
-
-    <div class="text-white mt-4 ">
+      </nav>
+      
+      <div class="text-white mt-4 ">
         <div class="row">
             <div class="col-sm-3">
-                <p>ALGORITHM</p>
-               <img class="rounded float-start" src="img\carbon (56) 1.png"> 
+              <p>ALGORITHM</p>
+              <img class="rounded float-start" src="img\carbon (56) 1.png"> 
             </div>
             <div class="col-md-7 m-4  justify-content-center">
-                <h1>Bisection Method</h1>
-                <p>The bisection method is an approximation method to find the roots of the given equation by repeatedly
+              <h1>Bisection Method</h1>
+              <p>The bisection method is an approximation method to find the roots of the given equation by repeatedly
                     dividing the interval. This method will divide the interval until the resulting interval is found,
                     which is
                     extremely small.</p>
                     <form>
-                        <div for="equation" class="equation">Equation</div>
-                        <input type="text" name="equation" id="equation" required>
-                        <input type="button" value="calculate" id="btn">
-                        <input type="button" value="Clear" id="clear">
-                        <br>
-                        <!-- <div class="label"> -->
+                      <div for="equation" class="equation">Equation</div>
+                      <input type="text" name="equation" id="equation" required>
+                      <input type="button" value="calculate" id="btn">
+                      <input type="button" value="Clear" id="clear">
+                      <br>
+                      <!-- <div class="label"> -->
                         <label for="xl" id="label-xl">XL</label>
                         <label for="xu" id="label-xu">XU</label>
                         <label for="eps" id="label-eps">EPS</label>
-                    <!-- </div> -->
+                        <!-- </div> -->
                         <!-- <div class="input"> -->
-                            <br>
-                        <input class="m-2" type="text" name="xl" id="xl" required>
-                        <input type="text" name="xu" id="xu" required>
-                        <input type="text" name="esp" id="esp" required>
-                    <!-- </div> -->
-                        
-                    </form>
-            </div>
-        </div>
+                          <br>
+                          <input class="m-2" type="text" name="xl" id="xl" required>
+                          <input type="text" name="xu" id="xu" required>
+                          <input type="text" name="esp" id="esp" required>
+                          <!-- </div> -->
+                          
+                        </form>
+                      </div>
+                    </div>
+                    
+                  </div>
 
-    </div>
-
-
-
-<div id="middle">    <div class=" w-75 h-50 bg-dark  m-auto mt-md-5" >
+                  
+                  
+                  <div id="middle">    <div class=" w-75 h-50 bg-dark  m-auto mt-md-5" >
             <table class="table  text-white">
               <tr>
                 <th >i</th>
@@ -88,7 +87,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-
+                
               </tr>
               <tr>
                 <td >2</td>
@@ -119,52 +118,60 @@
                 <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
               </tr>
               
-          </table>
+            </table>
           </div>
           <h3 class="text-white m-4 the-root">The Root = </h3>
+          <div class="d-flex align-items-center justify-content-center mb-4">
+          <video id="video1" width="320" height="240"  controls>
+            <source src="img/WhatsApp Video 2023-05-07 at 01.03.03.mp4" type="video/mp4">
+            <!-- <source src="movie.ogg" type="video/ogg"> -->
+          <!-- Your browser does not support the video tag. -->
+          </video></div>
+
         </div>
           <!-- bs5 -->
           <div class="footer  w-100   text-white">
             <div class="row">
-        
-                <div class="col-4  position-relative">
-                  <a href="index.html"><img src="img/NA.png" class="NAimg "></a>
+              
+              <div class="col-4  position-relative">
+                <a href="index.html"><img src="img/NA.png" class="NAimg "></a>
+              </div>
+              
+              
+              <div class="col-8 ">
+                <div class="row">
+                  <div class="col-3 p-3 ms-5">
+                    <p>
+                      <a href="Bisection.html">Bisection</a><br>
+                      <a href="False Position.html">False Position</a><br>
+                      <a href="fixed point .html">Simple Fixed Point</a><br>
+                      <a href="Newton.html">Newton</a><br>
+                      <a href="Secant Method.html">Secant</a>
+                    </p>
+                  </div>
+                  <div class="col-3 p-3">
+                    <a href="gaussian-elimination.html">Gauss Elimination</a><br>
+                    <a href="LUdecomposition.html">LU Decomposition</a><br>
+                    <a href="cramer.html">Cramer’s Rules</a><br>
+                    <a href="#">Partial Pivoting</a><br>
+                    <a href="gaussJordan.html">Gauss Jordan</a><br>
+                  </div>
+                  <div class="col-3 p-3">
+                    <p>
+                      <a href="#">Golden Section Search</a> <br>
+                      <a href="#"> Gradient Method </a><br>
+                      <a href="#"> Gradients & Hessians </a>
+                    </p> 
+                  </div>
+                  
                 </div>
-        
-        
-                <div class="col-8 ">
-                    <div class="row">
-                        <div class="col-3 p-3 ms-5">
-                            <p>
-                                <a href="Bisection.html">Bisection</a><br>
-                                <a href="False Position.html">False Position</a><br>
-                                <a href="fixed point .html">Simple Fixed Point</a><br>
-                                <a href="Newton.html">Newton</a><br>
-                                <a href="Secant Method.html">Secant</a>
-                                 </p>
-                        </div>
-                        <div class="col-3 p-3">
-                            <a href="gaussian-elimination.html">Gauss Elimination</a><br>
-                            <a href="LUdecomposition.html">LU Decomposition</a><br>
-                            <a href="cramer.html">Cramer’s Rules</a><br>
-                            <a href="#">Partial Pivoting</a><br>
-                            <a href="gaussJordan.html">Gauss Jordan</a><br>
-                        </div>
-                        <div class="col-3 p-3">
-                             <p>
-                                <a href="#">Golden Section Search</a> <br>
-                                <a href="#"> Gradient Method </a><br>
-                                <a href="#"> Gradients & Hessians </a>
-                            </p> 
-                        </div>
-        
-                    </div>
-                </div>
-        
+              </div>
+              
             </div>
         </div>
         
-    <script src='/js/jquery-3.6.4.min.js'></script>
-    <script src='Bisection_method.js'></script>
-</body>
-</html>
+        <script src="/js/bootstrap.bundle.min.js" ></script>
+        <script src='/js/jquery-3.6.4.min.js'></script>
+        <script src='Bisection_method.js'></script>
+      </body>
+      </html>
