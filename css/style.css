@@ -1,11 +1,13 @@
 *{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /*box-sizing: border-box;*/
 }
 .home{
      
     background-image: url(../img/Frame\ 21s3.png);
+    width: 100%;
+    background-attachment: fixed;
     background-position: center; 
     background-size: cover;
   /* position: relative; */
@@ -101,7 +103,7 @@ transform: translateY(-20px);
 
 }
 .card-img-top {
-    border-radius: 8px;
+    border-radius: 12px;
 }
 .the-root{
     text-align: center;
@@ -172,8 +174,7 @@ table{
     border: 3px solid rgba(90, 90, 90, 0.5);
 }
 .last-img{
-    display: flex;
-    flex-direction: row-reverse;
+    width: 100%
 }
 .SContain {
     background-color: #0058ff;
@@ -187,3 +188,20 @@ table{
     width: 100%;
     
 } 
+.Algo {
+    width: 100%;
+    border-radius: 10px;
+    margin-left: -7px;
+}
+.row{
+    width: 90%;
+}
+.s1{
+    padding: 50px 0px 100px;
+}
+.card{
+    width: 130%;
+    border-radius: 12px;
+}
+
+  
