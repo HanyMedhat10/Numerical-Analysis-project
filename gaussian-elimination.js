@@ -12,7 +12,7 @@ function gaussElimination() {
 	stepsElement.innerHTML = "Steps of the solution:";
   
 	for (let i = 0; i < n - 1; i++) {
-	  const stepElement = document.createElement("p");
+const stepElement = document.createElement("p");
   
 	  stepElement.innerHTML = `Step ${i+1}:<br>Pivot element: ${A[i][i]}<br>`;
   
@@ -58,7 +58,7 @@ function gaussElimination() {
   const stepsElement = document.getElementById("steps");
 
 
-  function clearFields() {
+function clearFields() {
     document.getElementById('r1x1').value = '';
     document.getElementById('r1x2').value = '';
     document.getElementById('r1x3').value = '';
@@ -74,4 +74,4 @@ function gaussElimination() {
     document.getElementById('matrix').innerHTML = "";
     document.getElementById('solution').innerHTML = "";
     document.getElementById('steps').innerHTML = "";
-  }
+}
