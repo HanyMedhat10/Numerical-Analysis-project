@@ -2,11 +2,11 @@
 
 included methods
 - Bisection
-- Dalse Position
-- Simple Fixed
+- False Position
+- Simple Fixed Point
 - Newton
 - Secant
 - Gauss Elimination
 - LU Decomposition
 - Gauss Jordan
-- Cramer
+- Cramer ’s Rules
